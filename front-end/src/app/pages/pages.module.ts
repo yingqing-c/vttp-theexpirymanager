@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AddItemComponent,
     ViewItemsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
