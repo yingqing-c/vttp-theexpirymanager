@@ -1,0 +1,46 @@
+<div class="space-around">
+    <h2>Add item</h2>
+
+    <input type="file" (change)="showImage($event)">
+    <br><br>
+    <!-- <div class="imageContainer" *ngIf="imageUrl">
+        <img id="itemImg" [src]="imageUrl" style="width: 300px;" />
+        <br><br>
+    </div> -->
+
+    <form (ngSubmit)="addItem()" [formGroup]="addItemFormGroup">
+        <!--
+        <mat-form-field>
+            <mat-label>Upload image</mat-label>
+        </mat-form-field> -->
+
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input type="text" formControlName="name" matInput required>
+            <!-- <mat-error *ngIf="name && name.invalid">Enter at least 5 characters</mat-error> -->
+        </mat-form-field>
+
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Expiry date</mat-label>
+            <input matInput [matDatepickerFilter]="expiryDateFilter" formControlName="expiry" [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="expiry && expiry.invalid">Please enter a valid expiry date (must not be set in the
+                past)</mat-error>
+        </mat-form-field>
+
+        <br><br>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput formControlName="remarks"></textarea>
+        </mat-form-field>
+
+        <br>
+
+        <button style="margin-top: 20px" mat-raised-button color="primary" type="submit"
+            [disabled]="addItemFormGroup.invalid">Add</button>
+    </form>
+</div>

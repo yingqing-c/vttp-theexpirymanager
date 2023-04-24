@@ -1,0 +1,19 @@
+<header>
+    <mat-toolbar class="navbar">
+        <div>
+            <a mat-button [routerLink]="'/home'">
+                <mat-icon class="logo">face</mat-icon>
+                <h1>TheExpiryManager</h1>
+            </a>
+        </div>
+        <div *ngIf="!loggedIn" class="links">
+            <a mat-button [routerLink]="'/login'"> Sign in </a>
+            <a mat-button [routerLink]="'/register'"> Register</a>
+        </div>
+        <div *ngIf="loggedIn" class="links">
+            <a mat-button [routerLink]="'/list'"> View </a>
+            <a mat-button [routerLink]="'/add'"> Add </a>
+            <a mat-button (click)="logout()">Log Out</a>
+        </div>
+    </mat-toolbar>
+</header>

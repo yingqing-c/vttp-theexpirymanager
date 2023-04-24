@@ -1,0 +1,46 @@
+.container-about {
+  // background-image: url(https://www.pexels.com/photo/1103970/download/);
+}
+
+.header {
+  border-color: rgb(0,0,0);
+  color: #000000;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.img-fluid-expirymanager {
+  height: 50%;
+  width: 50%;
+  float: none;
+}
+
+.container-features {
+  background-color: #929487;
+}
+
+.container-contact {
+  background-color: rgb(237, 241, 242);
+}
+
+.card-body {
+  height: 300px;
+}
+
+.materials-symbols-outlined{
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+
+}
+
+.row.row-cols-1.row-cols-md-2.mx-auto {
+  max-width: 900px;
+}
+
+.row-cols-md-2 > * {
+  flex: 0 0 auto;
+  width: 50%
+}

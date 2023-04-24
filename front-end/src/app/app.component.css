@@ -1,0 +1,18 @@
+header {
+  height: 50px;
+}
+
+.app-container {
+  height: 100%;
+  width: 100%;
+}
+
+.links {
+  position: absolute;
+  right: 30px;
+}
+
+.links a {
+  margin-left: 20px;
+}
+/*# sourceMappingURL=app.component.css.map */

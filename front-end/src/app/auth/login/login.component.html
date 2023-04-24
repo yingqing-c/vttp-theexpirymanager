@@ -1,0 +1,20 @@
+<div class="space-around">
+    <h2>{{ TITLE }}</h2>
+    <form (ngSubmit)="login()" [formGroup]="loginFormGroup">
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input type="text" formControlName="username" matInput required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" formControlName="password" matInput required>
+        </mat-form-field>
+        <br>
+        <button style="margin-top: 20px" mat-raised-button color="primary" type="submit"
+            [disabled]="loginFormGroup.invalid">{{ TITLE }}</button>
+    </form>
+    <div *ngIf="loginError">
+        <p class="error-msg">Invalid user credentials</p>
+    </div>
+</div>
