@@ -19,14 +19,14 @@ export class ExpiryService {
 
   getExpiring(items: Item[]): Item[] {
     function notExpired(elem: Item) {
-      let expired = false;
-      const expiryDate = elem.expiryDate;
+      let notexpired = false;
+      const expiryDate = new Date(elem.expiryDate);
       const today = new Date();
       today.setDate(today.getDate() - 1);
       if (expiryDate) {
-        expired = expiryDate.valueOf() >= today.valueOf();
+        notexpired = expiryDate.valueOf() >= today.valueOf();
       }
-      return !expired;
+      return notexpired;
     }
     return items.filter(notExpired);
   }
@@ -34,11 +34,11 @@ export class ExpiryService {
   getExpired(items: Item[]): Item[] {
     function isExpired(elem: Item) {
       let expired = false;
-      const expiryDate = elem.expiryDate;
+      const expiryDate = new Date(elem.expiryDate);
       const today = new Date();
       today.setDate(today.getDate() - 1);
       if (expiryDate) {
-        expired = expiryDate.valueOf() >= today.valueOf();
+        expired = expiryDate.valueOf() < today.valueOf();
       }
       return expired;
     }
